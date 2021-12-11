@@ -1,0 +1,31 @@
+{
+  "name": "radiogram-buddy",
+  "version": "1.0.0",
+  "description": "Management and organization software for American Radio Relay League Radiograms through the National Traffic System.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Oxymoron290/RadiogramBuddy.git"
+  },
+  "keywords": [
+    "Radiogram",
+    "ARRL",
+    "NTS",
+    "Amatuer",
+    "Radio",
+    "Ham"
+  ],
+  "author": "Timothy Sturm N5OXY",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Oxymoron290/RadiogramBuddy/issues"
+  },
+  "homepage": "https://github.com/Oxymoron290/RadiogramBuddy#readme",
+  "devDependencies": {
+    "electron": "^16.0.4"
+  }
+}
