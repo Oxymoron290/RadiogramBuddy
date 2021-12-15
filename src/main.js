@@ -30,7 +30,8 @@ const createWindow = () => {
         store.set('windowBounds', { width, height });
     });
 
-    win.loadFile('html/index.html')
+    //win.loadFile('html/index.html')
+    win.loadFile('html/radiogram.html')
 
     ipcMain.handle('dark-mode:toggle', () => {
         if (nativeTheme.shouldUseDarkColors) {
