@@ -39,36 +39,42 @@
         <section>
             <div class="preamble">
                 <div class="preamble-field" id="number-field">
-                    <label>NUMBER</label>
-                    <input />
+                    <label for="gram-number">NUMBER</label>
+                    <input id="gram-number" />
                 </div>
                 <div class="preamble-field" id="precedence-field">
-                    <label>PRECEDENCE</label>
-                    <input />
+                    <label for="gram-precedence">PRECEDENCE</label>
+                    <input id="gram-precedence" />
                 </div>
                 <div class="preamble-field" id="hx-field">
-                    <label>HX</label>
-                    <input />
+                    <label for="gram-handling-instructions">HX</label>
+                    <input id="gram-handling-instructions" />
                 </div>
                 <div class="preamble-field" id="stn-of-origin-field">
-                    <label>STATION OF ORIGIN</label>
-                    <input />
+                    <label for="gram-station-of-origin">STATION OF ORIGIN</label>
+                    <input id="gram-station-of-origin" />
                 </div>
                 <div class="preamble-field" id="check-field">
-                    <label>CHECK</label>
-                    <input />
+                    <label for="gram-check">CHECK</label>
+                    <input id="gram-check" />
                 </div>
                 <div class="preamble-field" id="place-of-origin-field">
-                    <label>PLACE OF ORIGIN</label>
-                    <input />
+                    <label for="gram-place-of-origin">PLACE OF ORIGIN</label>
+                    <input id="gram-place-of-origin" />
                 </div>
                 <div class="preamble-field" id="time-filed-field">
-                    <label>TIME FILED</label>
-                    <input />
+                    <label for="gram-time-filed">TIME FILED</label>
+                    <div style="display: inline-flex;">
+                        <input id="gram-time-filed" />
+                        <button style="display: none;" onclick="fillNow(document.getElementById('gram-time-filed'))">Now</button>
+                    </div>
                 </div>
                 <div class="preamble-field" id="date-field">
-                    <label>DATE</label>
-                    <input />
+                    <label for="gram-date">DATE</label>
+                    <div style="display: inline-flex;">
+                        <input id="gram-date" />
+                        <button style="display: none;" onclick="fillToday(document.getElementById('gram-date'))">Today</button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -77,14 +83,15 @@
                 <div class="recipient">
                     <div class="recipient-address">
                         <div>
-                            <label>TO</label>
-                            <input /><br />
-                            <input /><br />
-                            <input /><br />
+                            <label for="gram-recipient-address1">TO</label>
+                            <input id="gram-recipient-address1" /><br />
+                            <input id="gram-recipient-address2" /><br />
+                            <input id="gram-recipient-address3" /><br />
                         </div>
                     </div>
                     <div class="receipient-telephone">
-                        <label>TELEPHONE NUMBER</label> <input />
+                        <label for="gram-recipient-telephone">TELEPHONE NUMBER</label>
+                        <input id="gram-recipient-telephone" />
                     </div>
                 </div>
                 <div class="receiver">
@@ -92,26 +99,26 @@
                     <br />
                     <div class="receiver-station">
                         <div class="receiver-station-field">
-                            <label>AMATEUR STATION</label>
-                            <input tabindex="-1" />
+                            <label for="gram-receiver-callsign">AMATEUR STATION</label>
+                            <input id="gram-receiver-callsign" tabindex="-1" />
                         </div>
                         <div class="receiver-station-field">
-                            <label>PHONE</label>
-                            <input tabindex="-1" />
+                            <label for="gram-receiver-phone">PHONE</label>
+                            <input id="gram-receiver-phone" tabindex="-1" />
                         </div>
                     </div>
                     <div class="receiver-address">
                         <div class="receiver-address-field">
-                            <label>NAME</label>
-                            <input tabindex="-1" />
+                            <label for="gram-receiver-name">NAME</label>
+                            <input id="gram-receiver-name" tabindex="-1" />
                         </div>
                         <div class="receiver-address-field">
-                            <label>STREET ADDRESS</label>
-                            <input tabindex="-1" />
+                            <label for="gram-receiver-address">STREET ADDRESS</label>
+                            <input id="gram-receiver-address" tabindex="-1" />
                         </div>
                         <div class="receiver-address-field">
-                            <label>CITY, STATE, ZIP</label>
-                            <input tabindex="-1" />
+                            <label for="gram-receiver-city-state-zip">CITY, STATE, ZIP</label>
+                            <input id="gram-receiver-city-state-zip" tabindex="-1" />
                         </div>
                     </div>
                 </div>
@@ -218,5 +225,42 @@
         </section>
     </div>
   <script src="js/vendor/modernizr-3.11.8.min.js"></script>
+  <script>
+    function toggleButtons(){
+        const buttons = document.getElementsByTagName('button');
+        for (const button of buttons) {
+            if (button.style.display === "none") {
+                button.style.display = "block";
+            } else {
+                button.style.display = "none";
+            }
+        }
+    }
+
+    function fillNow(element){
+        const date = new Date();
+        element.value= [
+            padTo2Digits(date.getUTCHours()),
+            padTo2Digits(date.getUTCMinutes())
+        ].join(':');
+    }
+
+    function fillToday(element){
+        const date = new Date();
+        // element.value=[
+        //     date.getFullYear(),
+        //     padTo2Digits(date.getUTCMonth() + 1),
+        //     padTo2Digits(date.getUTCDate()),
+        // ].join('-');
+        element.value=[
+            date.toLocaleString('en-US', {month: 'short', timeZone: 'UTC' }),
+            padTo2Digits(date.getUTCDate()),
+        ].join(' ');
+    }
+
+    function padTo2Digits(num) {
+        return num.toString().padStart(2, '0');
+    }
+  </script>
 </body>
 </html>
