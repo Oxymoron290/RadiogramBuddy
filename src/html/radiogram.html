@@ -37,40 +37,122 @@
             <img src="./image/ARRL_logo.svg" width="45px" />
         </header>
         <section>
-            <div style="display: flex; width: 100%;">
-                <div class="preamble" style="width: 11%">
+            <div class="preamble">
+                <div class="preamble-field" id="number-field">
                     <label>NUMBER</label>
-                    <input style="width: 100%" />
+                    <input />
                 </div>
-                <div class="preamble" style="width: 13%">
+                <div class="preamble-field" id="precedence-field">
                     <label>PRECEDENCE</label>
-                    <input style="width: 100%" />
+                    <input />
                 </div>
-                <div class="preamble" style="width: 5%">
+                <div class="preamble-field" id="hx-field">
                     <label>HX</label>
-                    <input style="width: 100%" />
+                    <input />
                 </div>
-                <div class="preamble" style="width: 14%">
+                <div class="preamble-field" id="stn-of-origin-field">
                     <label>STATION OF ORIGIN</label>
-                    <input style="width: 100%" />
+                    <input />
                 </div>
-                <div class="preamble" style="width: 10%">
+                <div class="preamble-field" id="check-field">
                     <label>CHECK</label>
-                    <input style="width: 100%" />
+                    <input />
                 </div>
-                <div class="preamble" style="width: 22%">
+                <div class="preamble-field" id="place-of-origin-field">
                     <label>PLACE OF ORIGIN</label>
-                    <input style="width: 100%" />
+                    <input />
                 </div>
-                <div class="preamble" style="width: 13%">
+                <div class="preamble-field" id="time-filed-field">
                     <label>TIME FILED</label>
-                    <input style="width: 100%" />
+                    <input />
                 </div>
-                <div class="preamble" style="width: 12%">
+                <div class="preamble-field" id="date-field">
                     <label>DATE</label>
-                    <input style="width: 100%" />
+                    <input />
                 </div>
             </div>
+        </section>
+        <section>
+            <div class="addressees">
+                <div class="recipient">
+                    <div class="recipient-address">
+                        <div>
+                            <label>TO</label>
+                            <input /><br />
+                            <input /><br />
+                            <input /><br />
+                        </div>
+                    </div>
+                    <div class="receipient-telephone">
+                        <label>TELEPHONE NUMBER</label> <input />
+                    </div>
+                </div>
+                <div class="receiver">
+                    <label>THIS RADIO MESSAGE WAS RECEIVED AT</label>
+                    <div class="receiver-station">
+                        <div class="receiver-station-field">
+                            <label>AMATEUR STATION</label>
+                            <input tabindex="-1" />
+                        </div>
+                        <div class="receiver-station-field">
+                            <label>PHONE</label>
+                            <input tabindex="-1" />
+                        </div>
+                    </div>
+                    <div class="receiver-address">
+                        <label>NAME</label>
+                        <input tabindex="-1" /><br />
+                        <label>STREET ADDRESS</label>
+                        <input tabindex="-1" /><br />
+                        <label>CITY, STATE, ZIP</label>
+                        <input tabindex="-1" /><br />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="radiogram-body">
+                <div class="radiogram-row">
+                    <input id="word-01" />
+                    <input id="word-02" />
+                    <input id="word-03" />
+                    <input id="word-04" />
+                    <input id="word-05" />
+                </div>
+                <div class="radiogram-row">
+                    <input id="word-06" />
+                    <input id="word-07" />
+                    <input id="word-08" />
+                    <input id="word-09" />
+                    <input id="word-10" />
+                </div>
+                <div class="radiogram-row">
+                    <input id="word-11" />
+                    <input id="word-12" />
+                    <input id="word-13" />
+                    <input id="word-14" />
+                    <input id="word-15" />
+                </div>
+                <div class="radiogram-row">
+                    <input id="word-16" />
+                    <input id="word-17" />
+                    <input id="word-18" />
+                    <input id="word-19" />
+                    <input id="word-20" />
+                </div>
+                <div class="radiogram-row">
+                    <input id="word-21" />
+                    <input id="word-22" />
+                    <input id="word-23" />
+                    <input id="word-24" />
+                    <input id="word-25" />
+                </div>
+                
+                <div class="radiogram-row">
+                    <input id="operator-instructions" />
+                </div>
+            </div>
+            <hr />
         </section>
     </div>
   <script src="js/vendor/modernizr-3.11.8.min.js"></script>

@@ -50,17 +50,20 @@ header {
     margin: 0px;
 }
 
-section {
+.preamble {
+    display: flex;
+    width: 100%;
+    margin-bottom: 7px;
 }
 
-.preamble {
+.preamble-field {
     margin: 0px;
     padding: 0px;
     border: 1px solid;
     overflow: hidden;
 }
 
-.preamble label {
+.preamble-field label {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -68,6 +71,140 @@ section {
     font-size: xx-small;
     white-space: nowrap;
 }
+
+.preamble-field input {
+    width: 100%;
+}
+
+.preamble-field #number-field {
+    width: 11%;
+}
+
+.preamble-field #precedence-field {
+    width: 13%;
+}
+
+.preamble-field #hx-field {
+    width: 5%;
+}
+
+.preamble-field #stn-of-origin-field {
+    width: 14%;
+}
+
+.preamble-field #check-field {
+    width: 10%;
+}
+
+.preamble-field #place-of-origin-field {
+    width: 22%;
+}
+
+.preamble-field #time-filed-field {
+    width: 13%;
+}
+
+.preamble-field #date-field {
+    width: 12%
+}
+
+.addressees {
+    display: inline-flex;
+    width: 100%;
+}
+
+.recipient {
+    width: 50%;
+}
+
+.recipient-address label {
+    white-space: nowrap;
+    margin-left: 5%;
+    font-size: small;
+}
+
+.recipient-address input {
+    float: right;
+    width: 80%;
+    margin-right: 5%;
+}
+
+.receipient-telephone label {
+    white-space: nowrap;
+    margin-left: 5%;
+    width: 30%;
+    font-size: xx-small;
+}
+
+.receipient-telephone input {
+    float: right;
+    width: 60%;
+    margin-right: 5%;
+}
+
+.receiver {
+    width: 50%;
+}
+
+.receiver input {
+    height: 10px;
+    font-size: small;
+}
+
+.receiver label {
+    font-size: x-small;
+    text-transform: uppercase;
+    display:inline-block
+}
+
+.receiver-station {
+    justify-content: space-between;
+    position: relative;
+    
+}
+
+.receiver-station label{
+    position: relative;
+    text-align: center;
+    width: 20%;
+    text-transform: uppercase;
+    display:inline-block
+}
+
+.receiver-station input{
+    position: relative;
+    width: 25%;
+}
+
+.receiver-address {
+    position: relative;
+}
+
+.receiver-address input{
+    position: relative;
+    width: 75%;
+    float: right;
+}
+
+.radiogram-body {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.radiogram-row {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+}
+.radiogram-row input {
+    margin: 5px;
+    width: 20%
+}
+#operator-instructions {
+    width: 100%;
+}
+
 /*
 * Remove text-shadow in selection highlight:
 * https://twitter.com/miketaylr/status/12228805301
