@@ -35,6 +35,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-transform: uppercase;
 }
 
 .header {
@@ -54,6 +55,7 @@ header {
     display: flex;
     width: 100%;
     margin-bottom: 7px;
+    text-transform: uppercase;
 }
 
 .preamble-field {
@@ -111,6 +113,7 @@ header {
 .addressees {
     display: inline-flex;
     width: 100%;
+    text-transform: uppercase;
 }
 
 .recipient {
@@ -158,37 +161,45 @@ header {
 }
 
 .receiver-station {
+    overflow: hidden;
+    display: inline-flex;
     justify-content: space-between;
-    position: relative;
-    
+    width: 100%;
+}
+.receiver-station-field {
+    display: inline-flex;
+    justify-content: space-evenly;
+    white-space: nowrap;
+    width: 50%;
 }
 
-.receiver-station label{
-    position: relative;
-    text-align: center;
-    width: 20%;
+.receiver-station-field label{
     text-transform: uppercase;
-    display:inline-block
-}
-
-.receiver-station input{
-    position: relative;
-    width: 25%;
+    text-align: center;
 }
 
 .receiver-address {
-    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
 }
-
-.receiver-address input{
-    position: relative;
+.receiver-address-field {
+    white-space: nowrap;
+    width: 100%;
+}
+.receiver-address-field label{
+    width: 20%;
+}
+.receiver-address-field input{
     width: 75%;
-    float: right;
 }
 
 .radiogram-body {
     margin-left: 5%;
     margin-right: 5%;
+    text-transform: uppercase;
 }
 
 .radiogram-row {
@@ -198,11 +209,42 @@ header {
     width: 100%;
 }
 .radiogram-row input {
-    margin: 5px;
+    margin-left: 3px;
+    margin-right: 3px;
+    border-bottom: solid 2px;
     width: 20%
 }
 #operator-instructions {
     width: 100%;
+    margin-bottom: 0px;
+}
+
+.postamble {
+    display: inline-flex;
+    width: 100%;
+}
+.log {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 20%;
+    border-top: solid 1px;
+    padding-right: 3%;
+    margin-top: 0px;
+}
+.log-type {
+    width: 30%;
+    text-align: right;
+    padding-right: 3%;
+}
+
+.left-border {
+    border-left: solid 1px;
+}
+
+.disclaimer {
+    display: contents;
+    font-size: xx-small;
 }
 
 /*

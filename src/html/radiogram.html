@@ -89,6 +89,7 @@
                 </div>
                 <div class="receiver">
                     <label>THIS RADIO MESSAGE WAS RECEIVED AT</label>
+                    <br />
                     <div class="receiver-station">
                         <div class="receiver-station-field">
                             <label>AMATEUR STATION</label>
@@ -100,12 +101,18 @@
                         </div>
                     </div>
                     <div class="receiver-address">
-                        <label>NAME</label>
-                        <input tabindex="-1" /><br />
-                        <label>STREET ADDRESS</label>
-                        <input tabindex="-1" /><br />
-                        <label>CITY, STATE, ZIP</label>
-                        <input tabindex="-1" /><br />
+                        <div class="receiver-address-field">
+                            <label>NAME</label>
+                            <input tabindex="-1" />
+                        </div>
+                        <div class="receiver-address-field">
+                            <label>STREET ADDRESS</label>
+                            <input tabindex="-1" />
+                        </div>
+                        <div class="receiver-address-field">
+                            <label>CITY, STATE, ZIP</label>
+                            <input tabindex="-1" />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -152,11 +159,64 @@
                     <input id="operator-instructions" />
                 </div>
             </div>
-            <hr />
+        </section>
+        <section>
+            <div class="postamble">
+                <div class="log recorded">
+                    <div class="log-type">REC'D</div>
+                    
+                    <div class="preamble-field">
+                        <label>FROM</label>
+                        <input />
+                    </div>
+                    <div class="preamble-field">
+                        <label>DATE</label>
+                        <input />
+                    </div>
+                    <div class="preamble-field">
+                        <label>TIME</label>
+                        <input />
+                    </div>
+                </div>
+                <div class="log left-border">
+                    <div class="log-type">SENT</div>
+                    <div class="preamble-field">
+                        <label>TO</label>
+                        <input />
+                    </div>
+                    <div class="preamble-field">
+                        <label>DATE</label>
+                        <input />
+                    </div>
+                    <div class="preamble-field">
+                        <label>TIME</label>
+                        <input />
+                    </div>
+                </div>
+            </div>
+            <div class="postamble">
+                <div class="log">
+                    <div class="disclaimer">
+                        THIS MESSAGE WAS HANDLED FREE OF CHARGE BY A LICENSED AMATEUR RADIO OPERATOR,
+                        WHOSE ADDRESS IS SHOWN IN THE BOX AT RIGHT ABOVE. AS SUCH MESSAGES ARE
+                        HANDLED SOLELY FOR THE PLEASURE OF OPERATING, NO COMPENSATION CAN BE
+                        ACCEPTED BY A “HAM” OPERATOR. A RETURN MESSAGE MAY BE FILED WITH THE “HAM”
+                        DELIVERING THIS MESSAGE TO YOU. FURTHER INFORMATION ON AMATEUR RADIO MAY BE
+                        OBTAINED FROM ARRL HEADQUARTERS, 225 MAIN STREET, NEWINGTON, CT 0611
+                    </div>
+                </div>
+                <div class="log left-border">
+                    <div class="disclaimer">
+                        THE AMERICAN RADIO RELAY LEAGUE, INC, IS THE NATIONAL MEMBERSHIP SOCIETY OF
+                        LICENSED RADIO AMATEURS AND THE PUBLISHER OF QST MAGAZINE. ONE OF ITS
+                        FUNCTIONS IS PROMOTION OF PUBLIC SERVICE COMMUNICATION AMONG AMATEUR
+                        OPERATORS. TO THAT END, THE LEAGUE HAS ORGANIZED THE NATIONAL TRAFFIC
+                        SYSTEM FOR DAILY NATIONWIDE MESSAGE HANDLING.
+                    </div>
+                </div>
+            </div>
         </section>
     </div>
   <script src="js/vendor/modernizr-3.11.8.min.js"></script>
-
 </body>
-
 </html>
