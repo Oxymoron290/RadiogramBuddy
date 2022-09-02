@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain, nativeTheme } = require('electron')
+const { app, BrowserWindow, ipcMain, ipcRenderer nativeTheme } = require('electron')
 const path = require('path')
 const Store = require('./store.js');
 
