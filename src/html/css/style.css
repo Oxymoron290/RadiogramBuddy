@@ -58,14 +58,14 @@ header {
     text-transform: uppercase;
 }
 
-.preamble-field {
+.form-group {
     margin: 0px;
     padding: 0px;
     border: 1px solid;
     overflow: hidden;
 }
 
-.preamble-field label {
+.form-group label {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -74,39 +74,39 @@ header {
     white-space: nowrap;
 }
 
-.preamble-field input {
+.form-group input {
     width: 100%;
 }
 
-.preamble-field #number-field {
+.form-group #number-field {
     width: 11%;
 }
 
-.preamble-field #precedence-field {
+.form-group #precedence-field {
     width: 13%;
 }
 
-.preamble-field #hx-field {
+.form-group #hx-field {
     width: 5%;
 }
 
-.preamble-field #stn-of-origin-field {
+.form-group #stn-of-origin-field {
     width: 14%;
 }
 
-.preamble-field #check-field {
+.form-group #check-field {
     width: 10%;
 }
 
-.preamble-field #place-of-origin-field {
+.form-group #place-of-origin-field {
     width: 22%;
 }
 
-.preamble-field #time-filed-field {
+.form-group #time-filed-field {
     width: 13%;
 }
 
-.preamble-field #date-field {
+.form-group #date-field {
     width: 12%
 }
 
@@ -214,7 +214,7 @@ header {
     border-bottom: solid 2px;
     width: 20%
 }
-#operator-instructions {
+#signature {
     width: 100%;
     margin-bottom: 0px;
 }

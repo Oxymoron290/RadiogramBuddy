@@ -38,42 +38,46 @@
         </header>
         <section>
             <div class="preamble">
-                <div class="preamble-field" id="number-field">
+                <div class="form-group" id="number-field">
                     <label for="gram-number">NUMBER</label>
                     <input id="gram-number" />
                 </div>
-                <div class="preamble-field" id="precedence-field">
+                <div class="form-group" id="precedence-field">
                     <label for="gram-precedence">PRECEDENCE</label>
                     <input id="gram-precedence" />
                 </div>
-                <div class="preamble-field" id="hx-field">
+                <div class="form-group" id="hx-field">
                     <label for="gram-handling-instructions">HX</label>
                     <input id="gram-handling-instructions" />
                 </div>
-                <div class="preamble-field" id="stn-of-origin-field">
+                <div class="form-group" id="stn-of-origin-field">
                     <label for="gram-station-of-origin">STATION OF ORIGIN</label>
                     <input id="gram-station-of-origin" />
                 </div>
-                <div class="preamble-field" id="check-field">
+                <div class="form-group" id="check-field">
                     <label for="gram-check">CHECK</label>
-                    <input id="gram-check" />
+                    <div style="display: inline-flex;">
+                        <input id="gram-check" />
+                        <button style="display: none;"
+                        onclick="calcCheck()">Calc</button>
+                    </div>
                 </div>
-                <div class="preamble-field" id="place-of-origin-field">
+                <div class="form-group" id="place-of-origin-field">
                     <label for="gram-place-of-origin">PLACE OF ORIGIN</label>
                     <input id="gram-place-of-origin" />
                 </div>
-                <div class="preamble-field" id="time-filed-field">
+                <div class="form-group" id="time-filed-field">
                     <label for="gram-time-filed">TIME FILED</label>
                     <div style="display: inline-flex;">
                         <input id="gram-time-filed" />
                         <button style="display: none;" onclick="fillNow(document.getElementById('gram-time-filed'))">Now</button>
                     </div>
                 </div>
-                <div class="preamble-field" id="date-field">
-                    <label for="gram-date">DATE</label>
+                <div class="form-group" id="date-field">
+                    <label for="gram-date-filed">DATE</label>
                     <div style="display: inline-flex;">
-                        <input id="gram-date" />
-                        <button style="display: none;" onclick="fillToday(document.getElementById('gram-date'))">Today</button>
+                        <input id="gram-date-filed" />
+                        <button style="display: none;" onclick="fillToday(document.getElementById('gram-date-filed'))">Today</button>
                     </div>
                 </div>
             </div>
@@ -163,44 +167,51 @@
                 </div>
                 
                 <div class="radiogram-row">
-                    <input id="operator-instructions" />
+                    <input id="signature" />
                 </div>
             </div>
         </section>
         <section>
             <div class="postamble">
-                <div class="log recorded">
+                <div class="log received">
                     <div class="log-type">REC'D</div>
                     
-                    <div class="preamble-field">
+                    <div class="form-group">
                         <label>FROM</label>
-                        <input />
+                        <input id="received-from" />
                     </div>
-                    <div class="preamble-field">
+                    <div class="form-group">
                         <label>DATE</label>
-                        <input />
+                        <input id="received-date" />
                     </div>
-                    <div class="preamble-field">
+                    <div class="form-group">
                         <label>TIME</label>
-                        <input />
+                        <input id="received-time" />
                     </div>
                 </div>
                 <div class="log left-border">
                     <div class="log-type">SENT</div>
-                    <div class="preamble-field">
+                    <div class="form-group">
                         <label>TO</label>
-                        <input />
+                        <input id="sent-to" />
                     </div>
-                    <div class="preamble-field">
+                    <div class="form-group">
                         <label>DATE</label>
-                        <input />
+                        <input id="sent-date" />
                     </div>
-                    <div class="preamble-field">
+                    <div class="form-group">
                         <label>TIME</label>
-                        <input />
+                        <input id="sent-time" />
                     </div>
                 </div>
             </div>
+        </section>
+        <div style="position: absolute; bottom: 0px; right: 0px; display: inline-flex">
+            <button id="autofill" onclick="autofill()" tabindex="-1">Auto-fill</button>
+            <button id="submit" onclick="handleSubmit()">Save</button>
+            <button id="cancel" onclick="discard()">Cancel</button>
+        </div>
+        <footer>
             <div class="postamble">
                 <div class="log">
                     <div class="disclaimer">
@@ -222,7 +233,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </footer>
     </div>
   <script src="js/vendor/modernizr-3.11.8.min.js"></script>
   <script src="js/radiogram.js"></script>

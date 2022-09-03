@@ -1,6 +1,7 @@
-const { app, BrowserWindow, ipcMain, ipcRenderer nativeTheme } = require('electron')
+const { app, BrowserWindow, ipcMain, nativeTheme } = require('electron')
 const path = require('path')
 const Store = require('./store.js');
+const fs = require('fs');
 
 const store = new Store({
     // We'll call our data file 'user-preferences'
@@ -20,6 +21,7 @@ const createWindow = () => {
             preload: path.join(__dirname, 'preload.js')
         }
     })
+    win.webContents.openDevTools();
 
     win.on('resize', () => {
         // The event doesn't pass us the window size, so we call the `getBounds` method which returns an object with
@@ -29,9 +31,6 @@ const createWindow = () => {
         // Now that we have them, save them using the `set` method.
         store.set('windowBounds', { width, height });
     });
-
-    //win.loadFile('html/index.html')
-    win.loadFile('html/radiogram.html')
 
     ipcMain.handle('dark-mode:toggle', () => {
         if (nativeTheme.shouldUseDarkColors) {
@@ -45,6 +44,17 @@ const createWindow = () => {
     ipcMain.handle('dark-mode:system', () => {
         nativeTheme.themeSource = 'system'
     })
+
+    let i = 1;
+    ipcMain.handle('ping', () => 'pong ' + i++)
+    ipcMain.handle('saveRadiogram', async (event, data) => {
+        // TODO: generate file name or save to database.
+        try { fs.writeFileSync('radiogram.json', JSON.stringify(data, null, 2), 'utf-8'); }
+        catch(e) { console.error('Failed to save the file!'); console.error(e); }
+    });
+    
+    //win.loadFile('html/index.html')
+    win.loadFile('html/radiogram.html')
 }
 
 app.whenReady().then(() => {
